@@ -1,0 +1,1149 @@
+/* --- Base Styles (Default Theme) --- */
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    transition: background 0.5s ease, color 0.5s ease; /* Smooth theme transitions */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+}
+
+h1, h2 {
+    color: #4CAF50;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+/* Input and Buttons - Default Styling */
+.todo-input {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.todo-input input[type="text"] {
+    flex-grow: 1;
+    padding: 14px;
+    border: 1px solid #cceeff;
+    border-radius: 10px;
+    font-size: 17px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-input input[type="text"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.todo-input button,
+#auth-section button,
+.theme-selector button,
+#view-more {
+    padding: 14px 22px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todo-input button:hover,
+#auth-section button:hover,
+.theme-selector button:hover,
+#view-more:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* List Styling - Default */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+li {
+    background-color: #e8f5e9;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    color: #3f51b5; /* A subtle blue for text */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #9e9e9e;
+    background-color: #f1f8e9;
+    opacity: 0.8;
+}
+
+li .complete-btn {
+    background-color: #607D8B; /* Grey-blue for complete */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-right: 8px;
+    transition: background-color 0.3s ease;
+}
+li .complete-btn:hover {
+    background-color: #455A64;
+}
+
+li .delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+li .delete-btn:hover {
+    background-color: #da190b;
+}
+
+#view-more {
+    background-color: #2196F3;
+    margin-top: 20px;
+    width: fit-content;
+    display: block; /* Make it a block element to center */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#view-more:hover {
+    background-color: #0b7dda;
+}
+
+.theme-selector {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-selector label {
+    font-weight: 600;
+    color: #555;
+    transition: color 0.5s ease;
+}
+
+.theme-selector select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: white;
+    appearance: none; /* Remove default dropdown arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234CAF50'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.theme-selector select:hover {
+    border-color: #4CAF50;
+}
+.theme-selector select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Auth Section Specifics */
+#auth-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+#auth-section input {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 17px;
+}
+#toggle-auth {
+    background-color: #9E9E9E; /* A subtle grey for toggle button */
+}
+#toggle-auth:hover {
+    background-color: #757575;
+}
+
+
+/* --- THEMES --- */
+
+/* Dark Theme */
+body.dark {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+}
+.dark .container {
+    background-color: #3b4d61;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+.dark h1, .dark h2 {
+    color: #2ecc71; /* Emerald green */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.dark .theme-selector label {
+    color: #ecf0f1;
+}
+.dark .todo-input input[type="text"] {
+    background-color: #4a6074;
+    color: #ecf0f1;
+    border-color: #5d7488;
+}
+.dark .todo-input input[type="text"]:focus {
+    border-color: #2ecc71;
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+.dark .todo-input button,
+.dark #auth-section button,
+.dark .theme-selector button {
+    background-color: #2ecc71; /* Emerald green */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.dark .todo-input button:hover,
+.dark #auth-section button:hover,
+.dark .theme-selector button:hover {
+    background-color: #27ae60;
+}
+.dark li {
+    background-color: #5d7488;
+    color: #ecf0f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.dark li:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.dark li.completed {
+    color: #bdc3c7;
+    background-color: #4a6074;
+}
+.dark li .complete-btn {
+    background-color: #7f8c8d; /* Grey */
+}
+.dark li .complete-btn:hover {
+    background-color: #95a5a6;
+}
+.dark li .delete-btn {
+    background-color: #e74c3c; /* Alizarin red */
+}
+.dark li .delete-btn:hover {
+    background-color: #c0392b;
+}
+.dark #view-more {
+    background-color: #3498db; /* Peter River blue */
+}
+.dark #view-more:hover {
+    background-color: #2980b9;
+}
+.dark .theme-selector select {
+    background-color: #4a6074;
+    color: #ecf0f1;
+    border-color: #5d7488;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232ecc71'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Green arrow */
+}
+.dark .theme-selector select:hover {
+    border-color: #2ecc71;
+}
+.dark #toggle-auth {
+    background-color: #7f8c8d;
+}
+.dark #toggle-auth:hover {
+    background-color: #95a5a6;
+}
+
+/* Colorful Theme */
+body.colorful {
+    background: linear-gradient(45deg, #FF6B6B, #FFD166, #06D6A0, #118AB2, #073B4C);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #333;
+}
+.colorful .container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 3px solid #FF6B6B;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.colorful h1, .colorful h2 {
+    color: #FF6B6B;
+    text-shadow: 2px 2px 3px rgba(255, 209, 102, 0.5);
+    animation: pulse 2s infinite;
+}
+.colorful .todo-input input[type="text"] {
+    border-color: #06D6A0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.colorful .todo-input input[type="text"]:focus {
+    border-color: #118AB2;
+    box-shadow: 0 0 0 4px rgba(17, 138, 178, 0.3);
+}
+.colorful .todo-input button,
+.colorful #auth-section button,
+.colorful .theme-selector button {
+    background-color: #06D6A0;
+    box-shadow: 0 4px 10px rgba(6, 214, 160, 0.3);
+}
+.colorful .todo-input button:hover,
+.colorful #auth-section button:hover,
+.colorful .theme-selector button:hover {
+    background-color: #118AB2;
+}
+.colorful li {
+    background-color: #FFD166;
+    border-left: 5px solid #FF6B6B;
+    color: #073B4C;
+    font-weight: 500;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+.colorful li.completed {
+    background-color: #FFECB3;
+    border-color: #FFD166;
+    color: #999;
+}
+.colorful li .complete-btn {
+    background-color: #118AB2;
+}
+.colorful li .complete-btn:hover {
+    background-color: #073B4C;
+}
+.colorful li .delete-btn {
+    background-color: #FF6B6B;
+}
+.colorful li .delete-btn:hover {
+    background-color: #ff3838;
+}
+.colorful #view-more {
+    background-color: #073B4C;
+}
+.colorful #view-more:hover {
+    background-color: #118AB2;
+}
+.colorful .theme-selector select {
+    border-color: #FF6B6B;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF6B6B'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
+.colorful .theme-selector select:hover {
+    border-color: #06D6A0;
+}
+.colorful #toggle-auth {
+    background-color: #FFD166;
+    color: #073B4C;
+}
+.colorful #toggle-auth:hover {
+    background-color: #FFAC41;
+}
+
+/* Cartoon Theme - Enhanced */
+body.cartoon {
+    background-image: url('images/cartoon2.webp'); /* Use your cartoon background image */
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Comic Sans MS', 'Sniglet', cursive; /* Fun font */
+    color: #5a2e00; /* Dark brown for text */
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.7);
+}
+.cartoon .container {
+    background-color: rgba(255, 248, 220, 0.95); /* Creamy background */
+    border: 8px dashed #FFD700; /* Gold dashed border */
+    box-shadow: 10px 10px 0 #FF6347, 12px 12px 0 #FF4500; /* Layered shadow */
+    transform: rotate(-2deg); /* Slightly tilted */
+}
+.cartoon h1, .cartoon h2 {
+    font-family: 'Bangers', cursive; /* Comic book font */
+    color: #FF6347; /* Tomato red */
+    text-shadow: 3px 3px 0 #FFD700, 4px 4px 0 #FF4500;
+    margin-bottom: 30px;
+    font-size: 2.8em;
+    animation: bounceIn 1s ease-out;
+}
+.cartoon .theme-selector label {
+    color: #FF4500;
+}
+.cartoon .todo-input input[type="text"] {
+    background-color: #FFFACD; /* Lemon chiffon */
+    border: 3px solid #FFD700;
+    border-radius: 20px; /* More rounded */
+    color: #36454F;
+    font-weight: bold;
+    text-align: center;
+}
+.cartoon .todo-input input[type="text"]:focus {
+    border-color: #FF4500;
+    box-shadow: 0 0 0 5px rgba(255, 99, 71, 0.4);
+}
+.cartoon .todo-input button,
+.cartoon #auth-section button,
+.cartoon .theme-selector button {
+    background-color: #FFD700; /* Gold */
+    color: #FF6347; /* Tomato */
+    border: 3px solid #FF6347;
+    border-radius: 30px; /* Pill-shaped buttons */
+    font-weight: bold;
+    box-shadow: 4px 4px 0 #FF4500;
+}
+.cartoon .todo-input button:hover,
+.cartoon #auth-section button:hover,
+.cartoon .theme-selector button:hover {
+    background-color: #FF6347;
+    color: #FFD700;
+    transform: translateY(-4px) rotate(2deg);
+    box-shadow: 6px 6px 0 #FF4500;
+}
+.cartoon li {
+    background-color: #FFE0B2; /* Moccasin */
+    border: 3px dotted #FFD700;
+    color: #A0522D; /* Sienna */
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 3px 3px 0 #FFC0CB; /* Pinkish shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, border 0.3s ease;
+}
+.cartoon li:hover {
+    transform: translateY(-5px) rotate(-1deg);
+    box-shadow: 5px 5px 0 #FFC0CB, 7px 7px 0 #FF8C00;
+}
+.cartoon li.completed {
+    color: #BDB76B; /* Dark Khaki */
+    background-color: #FFF8DC; /* Cornsilk */
+    text-decoration-color: #FF6347;
+    opacity: 0.7;
+}
+.cartoon li .complete-btn {
+    background-color: #98FB98; /* Pale Green */
+    color: #2E8B57; /* Sea Green */
+    border: 2px solid #2E8B57;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.cartoon li .complete-btn:hover {
+    background-color: #3CB371; /* Medium Sea Green */
+    color: white;
+}
+.cartoon li .delete-btn {
+    background-color: #FF6347; /* Tomato */
+    border: 2px solid #FF4500;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.cartoon li .delete-btn:hover {
+    background-color: #FF4500;
+}
+.cartoon #view-more {
+    background-color: #87CEEB; /* Sky Blue */
+    color: white;
+    border: 3px solid #6A5ACD; /* Slate Blue */
+    box-shadow: 4px 4px 0 #6A5ACD;
+}
+.cartoon #view-more:hover {
+    background-color: #6495ED; /* Cornflower Blue */
+    box-shadow: 6px 6px 0 #6A5ACD;
+}
+.cartoon .theme-selector select {
+    border: 3px solid #FF6347;
+    background-color: #FFFACD;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF6347'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    font-weight: bold;
+}
+.cartoon #toggle-auth {
+    background-color: #FFEB3B; /* Yellow */
+    color: #FF6347;
+    border: 3px solid #FF6347;
+    box-shadow: 4px 4px 0 #FFD700;
+}
+.cartoon #toggle-auth:hover {
+    background-color: #FFC107;
+    box-shadow: 6px 6px 0 #FFD700;
+}
+
+
+/* Anime Theme - Enhanced */
+body.anime {
+    background-image: url('images/anime2.jpg'); /* Your anime background image */
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'M PLUS Rounded 1c', sans-serif; /* A gentle, rounded Japanese font */
+    color: #2F4F4F; /* Dark Slate Gray */
+}
+.anime .container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #7B68EE; /* Medium Slate Blue */
+    box-shadow: 0 0 20px rgba(123, 104, 238, 0.4);
+}
+.anime h1, .anime h2 {
+    font-family: 'Kosugi Maru', sans-serif; /* Another rounded Japanese font */
+    color: #7B68EE; /* Medium Slate Blue */
+    text-shadow: 2px 2px 0 #E0FFFF, 1px 1px 0 #ADD8E6; /* Layered shadow for depth */
+    font-size: 2.5em;
+    animation: fadeIn 1.5s ease-out;
+}
+.anime .theme-selector label {
+    color: #7B68EE;
+}
+.anime .todo-input input[type="text"] {
+    background-color: #F0FFFF; /* Azure */
+    border: 2px solid #ADD8E6; /* Light Blue */
+    border-radius: 8px;
+    color: #4682B4; /* Steel Blue */
+}
+.anime .todo-input input[type="text"]:focus {
+    border-color: #7B68EE;
+    box-shadow: 0 0 0 4px rgba(123, 104, 238, 0.3);
+}
+.anime .todo-input button,
+.anime #auth-section button,
+.anime .theme-selector button {
+    background-color: #7B68EE; /* Medium Slate Blue */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(123, 104, 238, 0.2);
+}
+.anime .todo-input button:hover,
+.anime #auth-section button:hover,
+.anime .theme-selector button:hover {
+    background-color: #6A5ACD; /* Slate Blue */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(123, 104, 238, 0.3);
+}
+.anime li {
+    background-color: #E0FFFF; /* Light Cyan */
+    border-left: 6px solid #87CEFA; /* Light Sky Blue */
+    color: #4682B4; /* Steel Blue */
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* For pseudo-element effects */
+}
+.anime li::before { /* Subtle shimmer effect */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease-out;
+}
+.anime li:hover::before {
+    left: 100%;
+}
+.anime li.completed {
+    color: #98AFC7; /* Light Steel Blue */
+    background-color: #F0F8FF; /* Alice Blue */
+    border-color: #B0E0E6; /* Powder Blue */
+    opacity: 0.8;
+}
+.anime li .complete-btn {
+    background-color: #66CDAA; /* Medium Aquamarine */
+    color: white;
+}
+.anime li .complete-btn:hover {
+    background-color: #48D1CC; /* Medium Turquoise */
+}
+.anime li .delete-btn {
+    background-color: #FF69B4; /* Hot Pink */
+}
+.anime li .delete-btn:hover {
+    background-color: #FF1493; /* Deep Pink */
+}
+.anime #view-more {
+    background-color: #4169E1; /* Royal Blue */
+}
+.anime #view-more:hover {
+    background-color: #1E90FF; /* Dodger Blue */
+}
+.anime .theme-selector select {
+    border: 2px solid #7B68EE;
+    background-color: #F0FFFF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237B68EE'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    color: #4682B4;
+}
+.anime #toggle-auth {
+    background-color: #B0E0E6; /* Powder Blue */
+    color: #4682B4;
+}
+.anime #toggle-auth:hover {
+    background-color: #87CEEB; /* Sky Blue */
+}
+
+/* Futuristic Theme */
+body.futuristic {
+    background: #0d1a26; /* Dark blue-black */
+    color: #00FFFF; /* Cyan */
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+.futuristic .container {
+    background-color: rgba(18, 29, 41, 0.95);
+    border: 2px solid #00FFFF;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+    animation: glowEffect 3s infinite alternate;
+}
+.futuristic h1, .futuristic h2 {
+    color: #00FF00; /* Neon green */
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+    animation: neonPulse 2s infinite alternate;
+}
+.futuristic .theme-selector label {
+    color: #00FFFF;
+}
+.futuristic .todo-input input[type="text"] {
+    background-color: #1a324b;
+    border: 1px solid #00FF00;
+    color: #00FFFF;
+    box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.4);
+}
+.futuristic .todo-input input[type="text"]:focus {
+    border-color: #00FFFF;
+    box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.3);
+}
+.futuristic .todo-input button,
+.futuristic #auth-section button,
+.futuristic .theme-selector button {
+    background-color: #00FF00; /* Neon green */
+    color: #0d1a26;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+}
+.futuristic .todo-input button:hover,
+.futuristic #auth-section button:hover,
+.futuristic .theme-selector button:hover {
+    background-color: #00FFFF; /* Cyan */
+    color: #0d1a26;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+.futuristic li {
+    background-color: #1a324b;
+    border-left: 5px solid #00FFFF;
+    color: #00FFFF;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+.futuristic li.completed {
+    color: #888;
+    background-color: #0f2336;
+    border-color: #00FF00;
+}
+.futuristic li .complete-btn {
+    background-color: #00FF00;
+    color: #0d1a26;
+}
+.futuristic li .complete-btn:hover {
+    background-color: #00CC00;
+}
+.futuristic li .delete-btn {
+    background-color: #FF0000; /* Red */
+    color: white;
+}
+.futuristic li .delete-btn:hover {
+    background-color: #CC0000;
+}
+/* --- Base Styles (Default Theme) --- */
+/* ... (Keep all your existing Base Styles) ... */
+
+/* Ensure disabled select options are styled clearly */
+.theme-selector select option:disabled {
+    color: #a0a0a0;
+    font-style: italic;
+    background-color: #f2f2f2;
+}
+
+/* --- THEMES --- */
+
+/* Dark Theme */
+/* ... (Keep all your existing Dark Theme styles) ... */
+
+/* Colorful Theme */
+/* ... (Keep all your existing Colorful Theme styles) ... */
+
+/* Cartoon Theme - Enhanced */
+/* ... (Keep all your existing Cartoon Theme styles) ... */
+
+/* Anime Theme - Enhanced */
+/* ... (Keep all your existing Anime Theme styles) ... */
+
+
+/* Futuristic Theme */
+/* ... (Keep all your existing Futuristic Theme styles) ... */
+
+
+/* Vintage Theme */
+body.vintage {
+    background-image: url('images/vintage.jpg'); /* Your vintage background image */
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Georgia', serif;
+    color: #4a4a4a;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.vintage .container {
+    background-color: #fcf8e3; /* Creamy yellow */
+    border: 5px solid #a87e5b; /* Dark brown border */
+    border-radius: 8px;
+    box-shadow: 10px 10px 0 #d4b499, 15px 15px 0 rgba(0,0,0,0.1); /* Layered shadows for depth */
+    padding: 40px;
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg); /* Subtle 3D tilt */
+}
+.vintage h1, .vintage h2 {
+    font-family: 'Playfair Display', serif; /* Elegant serif font (you'd need to import this) */
+    color: #7d4e24; /* Rich brown */
+    text-shadow: 2px 2px 0 #f0e6d2;
+    font-size: 2.4em;
+    margin-bottom: 35px;
+}
+.vintage .theme-selector label {
+    color: #7d4e24;
+}
+.vintage .todo-input input[type="text"],
+.vintage #auth-section input[type="text"],
+.vintage #auth-section input[type="password"] {
+    background-color: #fdf5e6; /* Old Lace */
+    border: 2px solid #a87e5b;
+    border-radius: 5px;
+    color: #5c3b1e;
+    font-style: italic;
+}
+.vintage .todo-input input[type="text"]:focus,
+.vintage #auth-section input[type="text"]:focus,
+.vintage #auth-section input[type="password"]:focus {
+    border-color: #7d4e24;
+    box-shadow: 0 0 0 4px rgba(125, 78, 36, 0.3);
+}
+.vintage .todo-input button,
+.vintage #auth-section button,
+.vintage .theme-selector button {
+    background-color: #a87e5b; /* Dark brown */
+    color: white;
+    border: 1px solid #7d4e24;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 #7d4e24;
+}
+.vintage .todo-input button:hover,
+.vintage #auth-section button:hover,
+.vintage .theme-selector button:hover {
+    background-color: #7d4e24;
+    transform: translateY(-1px);
+    box-shadow: 4px 4px 0 #a87e5b;
+}
+.vintage li {
+    background-color: #f5f5dc; /* Beige */
+    border-left: 6px solid #d4b499; /* Light brown */
+    color: #6a4a2a;
+    font-weight: normal;
+    font-size: 1.15em;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.vintage li.completed {
+    color: #a0a0a0;
+    background-color: #ececec;
+    border-color: #a87e5b;
+    text-decoration-color: #7d4e24;
+}
+.vintage li .complete-btn {
+    background-color: #8B4513; /* SaddleBrown */
+    color: white;
+}
+.vintage li .complete-btn:hover {
+    background-color: #A0522D; /* Sienna */
+}
+.vintage li .delete-btn {
+    background-color: #B22222; /* FireBrick */
+    color: white;
+}
+.vintage li .delete-btn:hover {
+    background-color: #8B0000; /* DarkRed */
+}
+.vintage #view-more {
+    background-color: #d4b499;
+    color: #5c3b1e;
+    border: 1px solid #a87e5b;
+    box-shadow: 3px 3px 0 #a87e5b;
+}
+.vintage #view-more:hover {
+    background-color: #a87e5b;
+    color: white;
+}
+.vintage .theme-selector select {
+    border: 2px solid #a87e5b;
+    background-color: #fdf5e6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237d4e24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    color: #5c3b1e;
+}
+.vintage #toggle-auth {
+    background-color: #d4b499;
+    color: #5c3b1e;
+    border: 1px solid #a87e5b;
+    box-shadow: 3px 3px 0 #a87e5b;
+}
+.vintage #toggle-auth:hover {
+    background-color: #a87e5b;
+    color: white;
+}
+
+/* --- Premium Themes --- */
+/* You would need to design more distinct styles for these */
+
+/* Premium Gold Theme */
+body.premium-gold {
+    background: linear-gradient(135deg, #FFD700, #DAA520, #B8860B); /* Gold gradient */
+    background-size: 200% 200%;
+    animation: goldShine 10s ease infinite alternate;
+    color: #333;
+    font-family: 'Bodoni Moda', serif; /* Elegant font (import this too!) */
+}
+.premium-gold .container {
+    background-color: #FFF8DC; /* Cornsilk light */
+    border: 4px double #DAA520; /* Double gold border */
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), inset 0 0 15px rgba(255, 215, 0, 0.5); /* Inner & outer glow */
+    transform: scale(1.02); /* Slightly larger */
+}
+.premium-gold h1, .premium-gold h2 {
+    color: #B8860B; /* Darker gold */
+    text-shadow: 2px 2px 0 #FFD700, 3px 3px 0 #DAA520;
+    font-weight: 900;
+}
+.premium-gold .theme-selector label {
+    color: #B8860B;
+}
+.premium-gold .todo-input input[type="text"],
+.premium-gold #auth-section input[type="text"],
+.premium-gold #auth-section input[type="password"] {
+    background-color: #FFFAF0; /* Floral white */
+    border: 2px solid #DAA520;
+    color: #664200;
+}
+.premium-gold .todo-input input[type="text"]:focus,
+.premium-gold #auth-section input[type="text"]:focus,
+.premium-gold #auth-section input[type="password"]:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 0 5px rgba(255, 215, 0, 0.4);
+}
+.premium-gold .todo-input button,
+.premium-gold #auth-section button,
+.premium-gold .theme-selector button {
+    background-color: #FFD700;
+    color: #664200;
+    border: 1px solid #DAA520;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+.premium-gold .todo-input button:hover,
+.premium-gold #auth-section button:hover,
+.premium-gold .theme-selector button:hover {
+    background-color: #DAA520;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6);
+}
+.premium-gold li {
+    background-color: #F8F8FF; /* Ghost White */
+    border-left: 8px solid #FFD700;
+    color: #664200;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.premium-gold li.completed {
+    color: #8B7A5D;
+    background-color: #FDF5E6;
+    border-color: #DAA520;
+}
+.premium-gold li .complete-btn {
+    background-color: #B8860B;
+}
+.premium-gold li .complete-btn:hover {
+    background-color: #DAA520;
+}
+.premium-gold li .delete-btn {
+    background-color: #CD5C5C; /* IndianRed */
+}
+.premium-gold li .delete-btn:hover {
+    background-color: #A52A2A; /* Brown */
+}
+.premium-gold #view-more {
+    background-color: #DAA520;
+    color: white;
+    border: 1px solid #B8860B;
+}
+.premium-gold #view-more:hover {
+    background-color: #B8860B;
+}
+.premium-gold .theme-selector select {
+    border: 2px solid #DAA520;
+    background-color: #FFFAF0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23DAA520'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    color: #664200;
+}
+.premium-gold #toggle-auth {
+    background-color: #FFD700;
+    color: #664200;
+    border: 1px solid #DAA520;
+}
+.premium-gold #toggle-auth:hover {
+    background-color: #DAA520;
+    color: white;
+}
+
+/* Premium Silver Theme */
+body.premium-silver {
+    background: linear-gradient(135deg, #ECE9E6, #D1D8E0, #A7B0BF); /* Silver gradient */
+    background-size: 200% 200%;
+    animation: silverShine 10s ease infinite alternate;
+    color: #4a4a4a;
+    font-family: 'Open Sans', sans-serif;
+}
+.premium-silver .container {
+    background-color: #F8F8F8;
+    border: 3px solid #C0C0C0;
+    box-shadow: 0 0 25px rgba(192, 192, 192, 0.6), inset 0 0 10px rgba(192, 192, 192, 0.3);
+}
+.premium-silver h1, .premium-silver h2 {
+    color: #696969; /* Dim Gray */
+    text-shadow: 1px 1px 0 #E0E0E0;
+}
+.premium-silver .theme-selector label {
+    color: #696969;
+}
+.premium-silver .todo-input input[type="text"],
+.premium-silver #auth-section input[type="text"],
+.premium-silver #auth-section input[type="password"] {
+    background-color: #FFFFFF;
+    border: 2px solid #D1D8E0;
+    color: #5a5a5a;
+}
+.premium-silver .todo-input input[type="text"]:focus,
+.premium-silver #auth-section input[type="text"]:focus,
+.premium-silver #auth-section input[type="password"]:focus {
+    border-color: #A7B0BF;
+    box-shadow: 0 0 0 5px rgba(167, 176, 191, 0.4);
+}
+.premium-silver .todo-input button,
+.premium-silver #auth-section button,
+.premium-silver .theme-selector button {
+    background-color: #C0C0C0;
+    color: #5a5a5a;
+    border: 1px solid #A7B0BF;
+    box-shadow: 0 4px 10px rgba(192, 192, 192, 0.4);
+}
+.premium-silver .todo-input button:hover,
+.premium-silver #auth-section button:hover,
+.premium-silver .theme-selector button:hover {
+    background-color: #A7B0BF;
+    color: white;
+    transform: translateY(-3px);
+}
+.premium-silver li {
+    background-color: #F0F0F0;
+    border-left: 6px solid #D1D8E0;
+    color: #5a5a5a;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+.premium-silver li.completed {
+    color: #808080;
+    background-color: #E0E0E0;
+    border-color: #C0C0C0;
+}
+.premium-silver li .complete-btn {
+    background-color: #8493A8;
+}
+.premium-silver li .complete-btn:hover {
+    background-color: #6B7D98;
+}
+.premium-silver li .delete-btn {
+    background-color: #DC143C; /* Crimson */
+}
+.premium-silver li .delete-btn:hover {
+    background-color: #B22222; /* FireBrick */
+}
+.premium-silver #view-more {
+    background-color: #A7B0BF;
+    color: white;
+    border: 1px solid #8493A8;
+}
+.premium-silver #view-more:hover {
+    background-color: #8493A8;
+}
+.premium-silver .theme-selector select {
+    border: 2px solid #A7B0BF;
+    background-color: #FFFFFF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A7B0BF'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    color: #5a5a5a;
+}
+.premium-silver #toggle-auth {
+    background-color: #C0C0C0;
+    color: #5a5a5a;
+    border: 1px solid #A7B0BF;
+}
+.premium-silver #toggle-auth:hover {
+    background-color: #A7B0BF;
+    color: white;
+}
+
+/* Premium Diamond Theme */
+body.premium-diamond {
+    background: linear-gradient(135deg, #E0FFFF, #ADD8E6, #B0E0E6); /* Light blue diamond gradient */
+    background-size: 200% 200%;
+    animation: diamondShine 12s ease infinite alternate;
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif; /* Modern font (import this too!) */
+}
+.premium-diamond .container {
+    background-color: rgba(255, 255, 255, 0.98);
+    border: 3px solid #6495ED; /* Cornflower Blue */
+    box-shadow: 0 0 40px rgba(100, 149, 237, 0.8), inset 0 0 20px rgba(173, 216, 230, 0.5);
+    transform: skew(-2deg); /* A subtle geometric skew */
+}
+.premium-diamond h1, .premium-diamond h2 {
+    color: #4169E1; /* Royal Blue */
+    text-shadow: 2px 2px 0 #ADD8E6, 3px 3px 0 #B0E0E6;
+    font-weight: 800;
+}
+.premium-diamond .theme-selector label {
+    color: #4169E1;
+}
+.premium-diamond .todo-input input[type="text"],
+.premium-diamond #auth-section input[type="text"],
+.premium-diamond #auth-section input[type="password"] {
+    background-color: #F8F8FF; /* Ghost White */
+    border: 2px solid #ADD8E6;
+    color: #2F4F4F;
+}
+.premium-diamond .todo-input input[type="text"]:focus,
+.premium-diamond #auth-section input[type="text"]:focus,
+.premium-diamond #auth-section input[type="password"]:focus {
+    border-color: #4169E1;
+    box-shadow: 0 0 0 5px rgba(65, 105, 225, 0.4);
+}
+.premium-diamond .todo-input button,
+.premium-diamond #auth-section button,
+.premium-diamond .theme-selector button {
+    background-color: #6495ED; /* Cornflower Blue */
+    color: white;
+    border: 1px solid #4169E1;
+    box-shadow: 0 5px 15px rgba(100, 149, 237, 0.4);
+}
+.premium-diamond .todo-input button:hover,
+.premium-diamond #auth-section button:hover,
+.premium-diamond .theme-selector button:hover {
+    background-color: #4169E1;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(65, 105, 225, 0.6);
+}
+.premium-diamond li {
+    background-color: #E0FFFF; /* Light Cyan */
+    border-left: 8px solid #ADD8E6;
+    color: #2F4F4F;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.premium-diamond li.completed {
+    color: #87CEFA;
+    background-color: #F0F8FF;
+    border-color: #ADD8E6;
+}
+.premium-diamond li .complete-btn {
+    background-color: #5F9EA0; /* CadetBlue */
+}
+.premium-diamond li .complete-btn:hover {
+    background-color: #4682B4; /* SteelBlue */
+}
+.premium-diamond li .delete-btn {
+    background-color: #FF6347; /* Tomato */
+}
+.premium-diamond li .delete-btn:hover {
+    background-color: #E63946; /* Imperial Red */
+}
+.premium-diamond #view-more {
+    background-color: #4169E1;
+    color: white;
+    border: 1px solid #2F4F4F;
+}
+.premium-diamond #view-more:hover {
+    background-color: #1E90FF;
+}
+.premium-diamond .theme-selector select {
+    border: 2px solid #6495ED;
+    background-color: #F8F8FF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234169E1'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    color: #2F4F4F;
+}
+.premium-diamond #toggle-auth {
+    background-color: #ADD8E6;
+    color: #2F4F4F;
+    border: 1px solid #6495ED;
+}
+.premium-diamond #toggle-auth:hover {
+    background-color: #87CEEB;
+    color: white;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes glowEffect {
+    0% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.7); }
+    50% { box-shadow: 0 0 45px rgba(0, 255, 255, 1); }
+    100% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.7); }}
